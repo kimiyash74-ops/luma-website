@@ -2,30 +2,716 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LUMA | روشنایی و زیبایی</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: Tahoma, sans-serif;
-            background: #f5f3ed;
-            color: #40513b;
-            text-align: center;
-            padding-top: 100px;
-        }
-        h1 {
-            font-size: 65px;
-            letter-spacing: 8px;
-        }
-        p {
-            font-size: 20px;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#344b3b">
+<meta name="description" content="LUMA | طراحی و تولید لوستر، شید و آباژور دست‌ساز با الهام از طبیعت">
+<title>LUMA | نور، هنر و طبیعت</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --green: #344b3b;
+  --dark: #26392e;
+  --olive: #74816a;
+  --cream: #f5f2e9;
+  --white: #fffefa;
+  --sand: #e8e1d2;
+  --text: #343b32;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Vazirmatn', sans-serif;
+  background: var(--cream);
+  color: var(--text);
+  line-height: 1.9;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.container {
+  width: min(1160px, 90%);
+  margin: auto;
+}
+
+/* Header */
+
+header {
+  background: var(--white);
+  border-bottom: 1px solid #e9e6dc;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar {
+  min-height: 82px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  color: var(--green);
+  font-family: Georgia, serif;
+  font-size: 37px;
+  font-weight: bold;
+  letter-spacing: 5px;
+  direction: ltr;
+}
+
+.logo small {
+  display: block;
+  font-family: 'Vazirmatn', sans-serif;
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-align: center;
+  margin-top: -12px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 32px;
+  list-style: none;
+  font-size: 14px;
+  color: #555c50;
+}
+
+.nav-links a:hover {
+  color: var(--olive);
+}
+
+.nav-action {
+  background: var(--green);
+  color: white;
+  padding: 10px 22px;
+  border-radius: 3px;
+  font-size: 13px;
+}
+
+.menu-btn {
+  display: none;
+  border: 0;
+  background: none;
+  font-size: 27px;
+  color: var(--green);
+}
+
+/* Hero */
+
+.hero {
+  min-height: 570px;
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  background: var(--green);
+  color: white;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 65px 12%;
+}
+
+.eyebrow {
+  font-size: 12px;
+  letter-spacing: 3px;
+  color: #c8d0bd;
+  margin-bottom: 20px;
+}
+
+.hero h1 {
+  font-size: clamp(35px, 5vw, 59px);
+  line-height: 1.5;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  color: #e0e5da;
+  font-size: 15px;
+  max-width: 420px;
+  margin-bottom: 32px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.btn-light {
+  background: var(--cream);
+  color: var(--green);
+  padding: 12px 27px;
+  display: inline-block;
+  font-size: 14px;
+}
+
+.btn-outline {
+  border: 1px solid #b9c3b5;
+  padding: 11px 25px;
+  color: white;
+  font-size: 14px;
+}
+
+.hero-image {
+  min-height: 570px;
+  background:
+  linear-gradient(90deg, rgba(38,57,46,.12), transparent),
+  url('https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=1200&q=85')
+  center/cover no-repeat;
+}
+
+/* Intro */
+
+.intro {
+  text-align: center;
+  padding: 90px 20px 75px;
+}
+
+.section-label {
+  color: var(--olive);
+  font-size: 12px;
+  letter-spacing: 3px;
+  margin-bottom: 12px;
+}
+
+.intro h2,
+.section-heading h2 {
+  color: var(--green);
+  font-size: 30px;
+  font-weight: 500;
+}
+
+.intro p {
+  max-width: 620px;
+  margin: 17px auto 0;
+  font-size: 14px;
+  color: #77796f;
+}
+
+/* Products */
+
+.products {
+  padding: 65px 0 95px;
+  background: var(--white);
+}
+
+.section-heading {
+  text-align: center;
+  margin-bottom: 45px;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 26px;
+}
+
+.product-card {
+  background: var(--cream);
+  transition: transform .3s;
+}
+
+.product-card:hover {
+  transform: translateY(-6px);
+}
+
+.product-card img {
+  width: 100%;
+  height: 310px;
+  object-fit: cover;
+  display: block;
+}
+
+.product-info {
+  padding: 20px;
+  text-align: center;
+}
+
+.product-info h3 {
+  font-size: 18px;
+  color: var(--green);
+  font-weight: 500;
+}
+
+.product-info p {
+  font-size: 13px;
+  color: #77796f;
+  margin: 7px 0 15px;
+}
+
+.product-info a {
+  font-size: 13px;
+  border-bottom: 1px solid var(--olive);
+  padding-bottom: 3px;
+  color: var(--green);
+}
+
+/* Brand story */
+
+.story {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 65px;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.story-image img {
+  width: 100%;
+  height: 440px;
+  object-fit: cover;
+}
+
+.story-content h2 {
+  font-size: 32px;
+  color: var(--green);
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.story-content p {
+  font-size: 14px;
+  color: #77796f;
+  margin-bottom: 25px;
+}
+
+.story-content a {
+  display: inline-block;
+  color: var(--green);
+  border-bottom: 1px solid var(--olive);
+  font-size: 14px;
+}
+
+/* Values */
+
+.values {
+  background: #e9e8dd;
+  padding: 70px 0;
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  text-align: center;
+  gap: 25px;
+}
+
+.value-item h3 {
+  font-size: 17px;
+  color: var(--green);
+  margin: 10px 0;
+}
+
+.value-item p {
+  font-size: 13px;
+  color: #73786d;
+}
+
+.value-icon {
+  font-size: 28px;
+}
+
+/* Contact */
+
+.contact {
+  background: var(--green);
+  color: white;
+  text-align: center;
+  padding: 85px 20px;
+}
+
+.contact h2 {
+  font-size: 32px;
+  font-weight: 500;
+}
+
+.contact p {
+  color: #d8dfd2;
+  margin: 15px auto 27px;
+  font-size: 14px;
+}
+
+.contact a {
+  display: inline-block;
+  background: var(--cream);
+  color: var(--green);
+  padding: 12px 30px;
+  font-size: 14px;
+}
+
+/* Footer */
+
+footer {
+  background: var(--dark);
+  color: #d8dfd2;
+  padding: 35px 0;
+  text-align: center;
+}
+
+footer .logo {
+  color: white;
+  margin-bottom: 15px;
+}
+
+footer p {
+  font-size: 12px;
+  color: #b9c3b5;
+}
+
+/* Mobile */
+
+@media (max-width: 760px) {
+  .navbar {
+    min-height: 70px;
+  }
+
+  .logo {
+    font-size: 30px;
+  }
+
+  .menu-btn {
+    display: block;
+  }
+
+  .nav-action {
+    display: none;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 100%;
+    background: var(--white);
+    flex-direction: column;
+    padding: 22px 8%;
+    gap: 15px;
+    border-bottom: 1px solid var(--sand);
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-content {
+    padding: 65px 8%;
+  }
+
+  .hero-image {
+    min-height: 330px;
+  }
+
+  .hero h1 {
+    font-size: 37px;
+  }
+
+  .intro {
+    padding: 65px 20px;
+  }
+
+  .intro h2,
+  .section-heading h2 {
+    font-size: 25px;
+  }
+
+  .product-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .product-card img {
+    height: 300px;
+  }
+
+  .story {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding-top: 65px;
+    padding-bottom: 65px;
+  }
+
+  .story-image img {
+    height: 320px;
+  }
+
+  .story-content h2 {
+    font-size: 26px;
+  }
+
+  .values-grid {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .contact h2 {
+    font-size: 26px;
+  }
+}
+</style>
 </head>
+
 <body>
-    <h1>LUMA</h1>
-    <p>نور، هنر و زیبایی در خانه شما</p>
-    <p>دنیای لوسترها و آباژورهای دست‌ساز</p>
+
+<header>
+  <div class="container navbar">
+
+    <a href="#" class="logo">
+      LUMA
+      <small>LIGHT & LIVING</small>
+    </a>
+
+    <button class="menu-btn" id="menuBtn" aria-label="باز کردن منو">☰</button>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home">خانه</a></li>
+      <li><a href="#products">محصولات</a></li>
+      <li><a href="#story">درباره لوما</a></li>
+      <li><a href="#contact">تماس با ما</a></li>
+    </ul>
+
+    <a class="nav-action" href="#products">مشاهده محصولات</a>
+
+  </div>
+</header>
+
+<main>
+
+<section class="hero" id="home">
+
+  <div class="hero-content">
+
+    <div class="eyebrow">LUMA · LIGHT & LIVING</div>
+
+    <h1>
+      زیبایی در سادگی،
+      <br>
+      هنر در روشنایی
+    </h1>
+
+    <p>
+      لوسترها و آباژورهای دست‌ساز با الهام از طبیعت؛
+      برای خانه‌هایی که زیبایی را در جزئیات پیدا می‌کنند.
+    </p>
+
+    <div class="hero-buttons">
+      <a href="#products" class="btn-light">دیدن محصولات</a>
+      <a href="#story" class="btn-outline">داستان لوما</a>
+    </div>
+
+  </div>
+
+  <div class="hero-image" role="img" aria-label="چراغ دکوراتیو در فضای داخلی"></div>
+
+</section>
+
+<section class="intro">
+
+  <div class="section-label">A NATURAL WAY OF LIGHT</div>
+
+  <h2>نور، فراتر از روشنایی</h2>
+
+  <p>
+    در LUMA باور داریم نور می‌تواند به یک اثر هنری تبدیل شود.
+    هر محصول با دقت و توجه به زیبایی متریال و فرم طراحی می‌شود
+    تا بخشی از هویت فضای شما باشد.
+  </p>
+
+</section>
+
+<section class="products" id="products">
+
+  <div class="container">
+
+    <div class="section-heading">
+      <div class="section-label">OUR COLLECTION</div>
+      <h2>مجموعه محصولات لوما</h2>
+    </div>
+
+    <div class="product-grid">
+
+      <article class="product-card">
+        <img
+          src="https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=800&q=85"
+          alt="چراغ آویز دکوراتیو"
+          loading="lazy"
+        >
+        <div class="product-info">
+          <h3>لوسترهای دست‌ساز</h3>
+          <p>ترکیبی از فرم، بافت و نور</p>
+          <a href="#contact">استعلام قیمت و سفارش</a>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <img
+          src="https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=800&q=85"
+          alt="چراغ دکوراتیو"
+          loading="lazy"
+        >
+        <div class="product-info">
+          <h3>شیدهای دکوراتیو</h3>
+          <p>بافت‌های طبیعی و طراحی متفاوت</p>
+          <a href="#contact">استعلام قیمت و سفارش</a>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <img
+          src="https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=800&q=85"
+          alt="آباژور دکوراتیو"
+          loading="lazy"
+        >
+        <div class="product-info">
+          <h3>آباژورها</h3>
+          <p>جزئیاتی برای فضایی گرم و دلنشین</p>
+          <a href="#contact">استعلام قیمت و سفارش</a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+
+</section>
+
+<section class="story container" id="story">
+
+  <div class="story-image">
+    <img
+      src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=1000&q=85"
+      alt="فضای داخلی با طراحی طبیعی"
+      loading="lazy"
+    >
+  </div>
+
+  <div class="story-content">
+
+    <div class="section-label">OUR STORY</div>
+
+    <h2>داستانی از جنس نور و طبیعت</h2>
+
+    <p>
+      لوما با علاقه به طراحی، نورپردازی و زیبایی متریال‌های طبیعی شکل گرفته است.
+      ما تلاش می‌کنیم محصولاتی خلق کنیم که علاوه بر کاربرد،
+      به فضای زندگی شخصیت و حس متفاوتی ببخشند.
+    </p>
+
+    <p>
+      از انتخاب متریال تا ساخت محصول نهایی،
+      زیبایی و ظرافت جزئیات برای ما اهمیت دارد.
+    </p>
+
+    <a href="#contact">بیشتر با ما آشنا شوید ←</a>
+
+  </div>
+
+</section>
+
+<section class="values">
+
+  <div class="container values-grid">
+
+    <div class="value-item">
+      <div class="value-icon">✳</div>
+      <h3>طراحی متفاوت</h3>
+      <p>فرم‌هایی با الهام از طبیعت و زیبایی ساده</p>
+    </div>
+
+    <div class="value-item">
+      <div class="value-icon">❋</div>
+      <h3>توجه به جزئیات</h3>
+      <p>دقت در انتخاب متریال و ساخت محصولات</p>
+    </div>
+
+    <div class="value-item">
+      <div class="value-icon">◇</div>
+      <h3>ساخت دست‌ساز</h3>
+      <p>تلاش برای خلق محصولاتی با هویت مستقل</p>
+    </div>
+
+  </div>
+
+</section>
+
+<section class="contact" id="contact">
+
+  <div class="section-label">GET IN TOUCH</div>
+
+  <h2>فضای خود را با لوما روشن کنید</h2>
+
+  <p>
+    برای اطلاع از قیمت، سفارش محصولات و دریافت مشاوره
+    با ما در ارتباط باشید.
+  </p>
+
+  <a href="mailto:YOUR-EMAIL@example.com">
+    ارتباط با لوما
+  </a>
+
+</section>
+
+</main>
+
+<footer>
+
+  <div class="container">
+
+    <div class="logo">LUMA</div>
+
+    <p>LIGHT & LIVING</p>
+
+    <p style="margin-top:15px">
+      © LUMA - All Rights Reserved
+    </p>
+
+  </div>
+
+</footer>
+
+<script>
+const menuBtn = document.getElementById('menuBtn');
+const navLinks = document.getElementById('navLinks');
+
+menuBtn.addEventListener('click', () => {
+  navLinks.classList.toggle('open');
+});
+
+document.querySelectorAll('.nav-links a').forEach(link => {
+  link.addEventListener('click', () => {
+    navLinks.classList.remove('open');
+  });
+});
+</script>
+
 </body>
 </html>
